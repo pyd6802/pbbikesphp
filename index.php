@@ -25,56 +25,35 @@
  
  <h1>Show me the data!</h1>
 
-    <?php  
+<?php
+// Connecting, selecting database
+$link = mysql_connect('34.68.111.23', 'root', 'pbbikesmysql')
+    or die('Could not connect: ' . mysql_error());
+echo 'Connected successfully';
+mysql_select_db('pbbikes') or die('Could not select database');
 
-/*Connect using SQL Server authentication.*/  
+// Performing SQL query
+$query = 'SELECT * FROM Location';
+$result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
-$serverName = "tcp:Bikerack001.database.windows.net,1433";  
-   $connectionOptions = array(  
-      "Database" => "BikeRack",  
-      "UID" => "BikeRack001",  
-      "PWD" => "BR/001001"  
-       );  
-   $conn = sqlsrv_connect($serverName, $connectionOptions);  
-  
-  if( $conn ) {
-     echo "Connection established.<br />";
-     }else{
-     echo "Connection could not be established.<br />";
-     die( print_r( sqlsrv_errors(), true));
-     }
- 
-/*Display Space Data.*/  
-    $sql = "SELECT 
-               Street,
-               Rack_Style,
-               Bike_Capacity,
-               Weather_Coverage
-            FROM dbo.Locations ORDER BY Street"; 
-    $stmt = sqlsrv_query($conn, $sql); 
-    if($stmt === false) 
-    { 
-      die(print_r(sqlsrv_errors(), true)); 
-     } 
- 
-  if(sqlsrv_has_rows($stmt)) 
-  { 
-    print("<table border='1px'>"); 
-    print("<tr><td>Street</td>"); 
-    print("<td>Rack Type</td>"); 
-    print("<td>Spaces Available</td>"); 
-    print("<td>Weather Cover</td></tr>"); 
- 
-  while($row = sqlsrv_fetch_array($stmt)) 
-  { 
-    print("<tr><td>".$row['Street']."</td>"); 
-    print("<td>".$row['Rack_Style']."</td>"); 
-    print("<td>".$row['Bike_Capacity']."</td>"); 
-    print("<td>".$row['Weather_Coverage']."</td></tr>"); 
-  } 
-print("</table>"); 
-} 
-?> 
+// Printing results in HTML
+echo "<table>\n";
+while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+    echo "\t<tr>\n";
+    foreach ($line as $col_value) {
+        echo "\t\t<td>$col_value</td>\n";
+    }
+    echo "\t</tr>\n";
+}
+echo "</table>\n";
+
+// Free resultset
+mysql_free_result($result);
+
+// Closing connection
+mysql_close($link);
+?>
+
 
   </body>
 
