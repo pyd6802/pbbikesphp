@@ -27,34 +27,64 @@
 
 <?php
 // Connecting, selecting database
-$link = mysql_connect('34.68.111.23', 'root', 'pbbikesmysql')
-    or die('Could not connect: ' . mysql_error());
-echo 'Connected successfully';
-mysql_select_db('pbbikes') or die('Could not select database');
+    echo 'Starting Connection Process';
+
+ $mysqli = new mysqli('34.68.111.23', 'root', 'pbbikesmysql', 'Location');
+    if ($mysqli->connect_errno) 
+    {
+    echo "Sorry, this database is experiencing problems.";
+
+    // Something you should not do on a public site, but this example will show you
+    // anyways, is print out MySQL error related information -- you might log this
+    
+    echo "Error: Failed to make a MySQL connection, here is why: \n";
+    echo "Errno: " . $mysqli->connect_errno . "\n";
+    echo "Error: " . $mysqli->connect_error . "\n";
+    
+    // You might want to show them something nice, but we will simply exit
+    exit;
+    }
+    echo 'Connected successfully';
 
 // Performing SQL query
-$query = 'SELECT * FROM Location';
-$result = mysql_query($query) or die('Query failed: ' . mysql_error());
+$sql = "SELECT * FROM Location;"
+if (!$result = $mysqli->query($sql)) {
+    // Oh no! The query failed. 
+    echo "Sorry, the website is experiencing problems.";
+
+    // Again, do not do this on a public site, but we'll show you how
+    // to get the error information
+    echo "Error: Our query failed to execute and here is why: \n";
+    echo "Query: " . $sql . "\n";
+    echo "Errno: " . $mysqli->errno . "\n";
+    echo "Error: " . $mysqli->error . "\n";
+    exit;
+}
+
+if ($result->num_rows === 0) {
+    echo "Error - Table empty";
+    exit;}
+       
+echo "Number of rows" . $result->num_rows;
+
 
 // Printing results in HTML
-echo "<table>\n";
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
-    echo "\t<tr>\n";
-    foreach ($line as $col_value) {
-        echo "\t\t<td>$col_value</td>\n";
-    }
-    echo "\t</tr>\n";
-}
-echo "</table>\n";
+//echo "<table>\n";
+//while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+//    echo "\t<tr>\n";
+//    foreach ($line as $col_value) {
+//        echo "\t\t<td>$col_value</td>\n";
+//    }
+//    echo "\t</tr>\n";
+//}
+//echo "</table>\n";
 
-// Free resultset
-mysql_free_result($result);
 
-// Closing connection
-mysql_close($link);
+    $result->free();
+    $mysqli->close();
 ?>
 
-
+ 
   </body>
 
 </html>
