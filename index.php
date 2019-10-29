@@ -11,6 +11,12 @@
     <h1>Pittsburgh Bike Racks</h1>
     <p>Need to park your bike? Use the interactive map showing location of bike racks in downtown Pittsburgh</p>
     
+    <p>Click on the tree map location to see where the rack is located.</p>
+    <iframe width="1140" height="541.25" 
+     src="https://app.powerbi.com/reportEmbed?reportId=65f4b52f-97a8-47ee-b183-44d5c0b37b56&autoAuth=true&ctid=4c25b8a6-17f7-46f9-83f0-54734ab81fb1&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLW5vcnRoLWNlbnRyYWwtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" 
+            frameborder="0" allowFullScreen="true"></iframe>
+ 
+    
     <iframe width="800" height="400" 
           src="https://app.powerbi.com/view?r=eyJrIjoiMTZmYzZjMDEtMTdjZi00NTg3LTlkMjEtMmVjNjUyN2ZhN2Y0IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
           frameborder="0" allowFullScreen="true"></iframe>
