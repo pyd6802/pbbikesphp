@@ -35,7 +35,7 @@
 // Connecting, selecting database
     echo 'Starting Connection Process';
 
- $mysqli = new mysqli('34.68.111.23', 'root', 'pbbikesmysql', 'Location');
+ $mysqli = new mysqli('34.68.111.23', 'root', 'pbbikesmysql', 'pbbikes');
     if ($mysqli->connect_errno) 
     {
     echo "Sorry, this database is experiencing problems.";
@@ -53,7 +53,7 @@
     echo 'Connected successfully';
 
 // Performing SQL query
-$sql = "SELECT * FROM Location;"
+$sql = "SELECT * FROM Location;";
 if (!$result = $mysqli->query($sql)) {
     // Oh no! The query failed. 
   echo "Sorry, the website is experiencing problems.";
@@ -84,8 +84,8 @@ echo "Number of rows" . $result->num_rows;
 //echo "</table>\n";
 
 
-  //  $result->free();
-    $mysqli->close();
+  $result->free();
+  $mysqli->close();
 ?>
 
  
