@@ -47,13 +47,9 @@
 
         <form action="php_update_data_from_mysql_database_table.php" method="post">
 
-            ID To Update: <input type="text" name="id" required><br><br>
+            Location ID To Update: <input type="text" name="id" required><br><br>
 
-            New First Name:<input type="text" name="fname" required><br><br>
-
-            New Last Name:<input type="text" name="lname" required><br><br>
-
-            New Age:<input type="number" name="age" required><br><br>
+            New Rack Capacity:<input type="number" name="capacity" required><br><br>
 
             <input type="submit" name="update" value="Update Data">
 
@@ -115,7 +111,25 @@ echo "Number of rows" . $result->num_rows;
 //    echo "\t</tr>\n";
 //}
 //echo "</table>\n";
-
+ 
+    // get values form input text and number
+   
+   $id = $_POST['location id'];
+   $capacity = $_POST['capacity'];
+           
+   // mysql query to Update data
+   $query = "UPDATE `Location` SET `Bike_Capacity`='$capacity' WHERE `LocID` = $id";
+   
+   $result = mysqli_query($connect, $query);
+   
+   if($result)
+   {
+       echo 'Data Updated';
+   }else{
+       echo 'Data Not Updated - Location not found';
+   }
+   mysqli_close($connect);
+}
 
   $result->free();
   $mysqli->close();
