@@ -31,6 +31,111 @@
  
  <h1>Show me the data!</h1>
 
+    
+<?php
+// Connecting, selecting database
+   echo 'Starting Connection Process';
+
+   $mysqli = new mysqli('34.68.111.23', 'root', 'pbbikesmysql', 'pbbikes');
+   
+   if ($mysqli->connect_errno) 
+    {
+    echo "Sorry, this database is experiencing problems.";
+
+    // Something you should not do on a public site, but this example will show you
+    // anyways, is print out MySQL error related information -- you might log this
+    
+    echo "Error: Failed to make a MySQL connection, here is why: \n";
+    echo "Errno: " . $mysqli->connect_errno . "\n";
+    echo "Error: " . $mysqli->connect_error . "\n";
+    
+    // You might want to show them something nice, but we will simply exit
+    exit;
+    }
+    echo 'Connected successfully';
+?>
+
+<?php>
+// Performing SQL query
+$sql = "SELECT * FROM Location;";
+if (!$result = $mysqli->query($sql)) {
+    // Oh no! The query failed. 
+  echo "Sorry, the website is experiencing problems.";
+
+  echo "Error: Our query failed to execute and here is why: \n";
+  echo "Query: " . $sql . "\n";
+  echo "Errno: " . $mysqli->errno . "\n";
+  echo "Error: " . $mysqli->error . "\n";
+  exit;
+}
+
+//if ($result->num_rows === 0) {
+  //  echo "Error - Table empty";
+    //exit;}
+       
+echo "Number of rows" . $result->num_rows;
+$result->free();
+?>
+<?php
+
+//Display Data in Table Format
+$sql = "SELECT * FROM Location";
+
+if (!$result = $mysqli->query($sql)) {
+    // Oh no! The query failed. 
+  echo "Sorry, the website is experiencing problems.";
+
+  echo "Error: Our query failed to execute and here is why: \n";
+  echo "Query: " . $sql . "\n";
+  echo "Errno: " . $mysqli->errno . "\n";
+  echo "Error: " . $mysqli->error . "\n";
+  exit;
+}
+?>
+
+<!doctype html>
+<html>
+<body>
+<h1 align="center">Rack Details</h1>
+<table border="1" align="center" style="line-height:25px;">
+<tr>
+<th>Location ID</th>
+<th>Street</th>
+<th>Building</th>
+<th>Rack Capacity</th>
+<th>Rack Style</th>
+<th>Weather Coverage</th>
+
+</tr>
+
+<?php
+//Fetch Data form database
+
+if($result->num_rows > 0){
+ while($row = $result->fetch_assoc()){
+
+ <tr>
+ <td><?php echo $row['LocID']; ?></td>
+ <td><?php echo $row['Street']; ?></td>
+ <td><?php echo $row['Building']; ?></td>
+ <td><?php echo $row['Bike_Capacity']; ?></td>
+ <td><?php echo $row['Rack_Style']; ?></td>
+ <td><?php echo $row['Weather_Coverage']; ?></td>}
+
+else
+{ 
+ <tr>
+ <td>?php echo "There's No data found!!!" </td>
+ </tr>
+}}
+
+</body>
+
+
+</html>    
+
+/* Update Form */
+
 <html>
 
     <head>
@@ -59,83 +164,3 @@
 
 
 </html>    
-    
-<?php
-// Connecting, selecting database
-    echo 'Starting Connection Process';
-
- $mysqli = new mysqli('34.68.111.23', 'root', 'pbbikesmysql', 'pbbikes');
-    if ($mysqli->connect_errno) 
-    {
-    echo "Sorry, this database is experiencing problems.";
-
-    // Something you should not do on a public site, but this example will show you
-    // anyways, is print out MySQL error related information -- you might log this
-    
-    echo "Error: Failed to make a MySQL connection, here is why: \n";
-    echo "Errno: " . $mysqli->connect_errno . "\n";
-    echo "Error: " . $mysqli->connect_error . "\n";
-    
-    // You might want to show them something nice, but we will simply exit
-    exit;
-    }
-    echo 'Connected successfully';
-
-// Performing SQL query
-$sql = "SELECT * FROM Location;";
-if (!$result = $mysqli->query($sql)) {
-    // Oh no! The query failed. 
-  echo "Sorry, the website is experiencing problems.";
-
-  echo "Error: Our query failed to execute and here is why: \n";
-  echo "Query: " . $sql . "\n";
-  echo "Errno: " . $mysqli->errno . "\n";
-  echo "Error: " . $mysqli->error . "\n";
-  exit;
-}
-
-//if ($result->num_rows === 0) {
-  //  echo "Error - Table empty";
-    //exit;}
-       
-echo "Number of rows" . $result->num_rows;
-
-
-// Printing results in HTML
-//echo "<table>\n";
-//while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
-//    echo "\t<tr>\n";
-//    foreach ($line as $col_value) {
-//        echo "\t\t<td>$col_value</td>\n";
-//    }
-//    echo "\t</tr>\n";
-//}
-//echo "</table>\n";
- 
-    // get values form input text and number
-   
-   $id = $_POST['location id'];
-   $capacity = $_POST['capacity'];
-           
-   // mysql query to Update data
-   $query = "UPDATE `Location` SET `Bike_Capacity`='$capacity' WHERE `LocID` = $id";
-   
-   $result = mysqli_query($connect, $query);
-   
-   if($result)
-   {
-       echo 'Data Updated';
-   }else{
-       echo 'Data Not Updated - Location not found';
-   }
-   mysqli_close($connect);
-}
-
-  $result->free();
-  $mysqli->close();
-?>
-
- 
-  </body>
-
-</html>
