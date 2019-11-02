@@ -16,17 +16,6 @@
      src="https://app.powerbi.com/reportEmbed?reportId=65f4b52f-97a8-47ee-b183-44d5c0b37b56&autoAuth=true&ctid=4c25b8a6-17f7-46f9-83f0-54734ab81fb1&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLW5vcnRoLWNlbnRyYWwtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" 
             frameborder="0" allowFullScreen="true"></iframe>
  
-    
-    <iframe width="800" height="400" 
-          src="https://app.powerbi.com/view?r=eyJrIjoiMTZmYzZjMDEtMTdjZi00NTg3LTlkMjEtMmVjNjUyN2ZhN2Y0IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
-          frameborder="0" allowFullScreen="true"></iframe>
-
-    <h1>Pittsburgh Bike Racks</h1>
-    <p>Where is the most space? Interactive grid showing bike capacity by rack location in downtown Pittsburgh</p>
-     
-    <iframe width="800" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiYjFkNzc1OTYtNmJjYS00YmU1LWJjOTktMzczY2UwODZhZDA1IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
-          frameborder="0" allowFullScreen="true"></iframe>
- 
     <p>Created using PowerBI services</p>
  
  <h1>Show me the data!</h1>
@@ -45,7 +34,7 @@ if($link === false){
  
 // Attempt select query execution
 
-$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage FROM Location ORDER BY Bike_Capacity";
+$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage FROM Location WHERE Bike_Capacity > 0 ORDER BY Bike_Capacity DESC";
  
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
@@ -63,8 +52,8 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['LocID'] . "</td>";
                 echo "<td>" . $row['Street'] . "</td>";
                 echo "<td>" . $row['Building'] . "</td>";
-                echo "<td>" . $row['Bike_Capacity'] . "</td>";
-		echo "<td>" . $row['Rack_Style'] . "</td>";
+                echo "<td>" . $row['Bike_CapacityCapacity'] . "</td>";
+				echo "<td>" . $row['Rack_Style'] . "</td>";
                 echo "<td>" . $row['Weather_Coverage'] . "</td>";
             echo "</tr>";
         }
@@ -77,9 +66,8 @@ if($result = mysqli_query($link, $sql)){
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
-
 ?>
-	  
+
 <?php
  $result->free();
  $mysqli->close();
