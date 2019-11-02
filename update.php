@@ -18,19 +18,18 @@ if($link === false){
    $Capacity = $_POST['capacity'];
            
    // mysql query to Update data
-
-   $query = "UPDATE `Location` SET `Capacity`=$Capacity WHERE `LocID` = $Location_id";
+   //"UPDATE persons SET email='peterparker_new@mail.com' WHERE id=1"
+   
+   $query = "UPDATE Location SET Capacity='.$Capacity. 'WHERE LocID ='.$Location_id";
    $result = mysqli_query($link, $query);
    
    if($result)
    {
        echo 'Data Updated';
-   }
-   else
-   {
-    echo 'Invalid Location ID';
+   }else{
+       echo 'Invalid Location ID';
 	   echo "Error: Our query failed to execute and here is why: \n";
-	   echo "Query: " . $sql . "\n";
+	   echo "Query: " . $query . "\n";
 	   echo "Errno: " . $mysqli->errno . "\n";
 	   echo "Error: " . $mysqli->error . "\n";
    }
