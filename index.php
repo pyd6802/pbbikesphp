@@ -63,8 +63,8 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['LocID'] . "</td>";
                 echo "<td>" . $row['Street'] . "</td>";
                 echo "<td>" . $row['Building'] . "</td>";
-                echo "<td>" . $row['Bike_CapacityCapacity'] . "</td>";
-				echo "<td>" . $row['Rack_Style'] . "</td>";
+                echo "<td>" . $row['Bike_Capacity'] . "</td>";
+		echo "<td>" . $row['Rack_Style'] . "</td>";
                 echo "<td>" . $row['Weather_Coverage'] . "</td>";
             echo "</tr>";
         }
