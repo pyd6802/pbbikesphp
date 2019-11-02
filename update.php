@@ -1,4 +1,4 @@
-?php
+<?php
 
 // php code to Update data from mysql database Table
 
@@ -25,8 +25,14 @@ if($link === false){
    if($result)
    {
        echo 'Data Updated';
-   }else{
-       echo 'Invalid Location ID';
+   }
+   else
+   {
+    echo 'Invalid Location ID';
+	   echo "Error: Our query failed to execute and here is why: \n";
+	   echo "Query: " . $sql . "\n";
+	   echo "Errno: " . $mysqli->errno . "\n";
+	   echo "Error: " . $mysqli->error . "\n";
    }
    mysqli_close($link);
 }
@@ -44,7 +50,7 @@ if($link === false){
     </head>
 
     <body>
-        <form action="php_update_data_from_mysql_database_table.php" method="post">
+        <form action="update.php" method="post">
             Location ID To Update: <input type="number" name="Location_id" required><br><br>
             New Capacity:<input type="number" name="Capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
