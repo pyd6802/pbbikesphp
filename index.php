@@ -45,7 +45,7 @@ if($link === false){
  
 // Attempt select query execution
 
-$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage FROM Location";
+$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage FROM Location ORDER BY Bike_Capacity";
  
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
