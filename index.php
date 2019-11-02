@@ -31,105 +31,53 @@
  
  <h1>Show me the data!</h1>
 
-    
-<?php
-// Connecting, selecting database
-   echo 'Starting Connection Process';
 
-   $mysqli = new mysqli('34.68.111.23', 'root', 'pbbikesmysql', 'pbbikes');
-   
-   if ($mysqli->connect_errno) 
-    {
-    echo "Sorry, this database is experiencing problems.";
+<?php 
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
 
-    // Something you should not do on a public site, but this example will show you
-    // anyways, is print out MySQL error related information -- you might log this
-    
-    echo "Error: Failed to make a MySQL connection, here is why: \n";
-    echo "Errno: " . $mysqli->connect_errno . "\n";
-    echo "Error: " . $mysqli->connect_error . "\n";
-    
-    // You might want to show them something nice, but we will simply exit
-    exit;
+$link = mysqli_connect('34.68.111.23', 'root', 'pbbikesmysql', 'pbbikes');
+// Check connection
+
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt select query execution
+
+$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage FROM Location";
+ 
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        echo "<table>";
+            echo "<tr>";
+                echo "<th>Location ID</th>";
+                echo "<th>Street</th>";
+                echo "<th>Building</th>";
+                echo "<th>Bike Capacity</th>";
+                echo "<th>Rack Style</th>";
+                echo "<th>Weather Coverage</th>";
+            echo "</tr>";
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td>" . $row['LocID'] . "</td>";
+                echo "<td>" . $row['Street'] . "</td>";
+                echo "<td>" . $row['Building'] . "</td>";
+                echo "<td>" . $row['Bike_CapacityCapacity'] . "</td>";
+				echo "<td>" . $row['Rack_Style'] . "</td>";
+                echo "<td>" . $row['Weather_Coverage'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
     }
-    echo 'Connected successfully';
-?>
-
-<?php>
-// Performing SQL query
-$sql = "SELECT * FROM Location;";
-if (!$result = $mysqli->query($sql)) {
-    // Oh no! The query failed. 
-  echo "Sorry, the website is experiencing problems.";
-
-  echo "Error: Our query failed to execute and here is why: \n";
-  echo "Query: " . $sql . "\n";
-  echo "Errno: " . $mysqli->errno . "\n";
-  echo "Error: " . $mysqli->error . "\n";
-  exit;
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
 
-//if ($result->num_rows === 0) {
-  //  echo "Error - Table empty";
-    //exit;}
-       
-echo "Number of rows" . $result->num_rows;
-$result->free();
-?>
-<?php
-
-//Display Data in Table Format
-$sql = "SELECT * FROM Location";
-
-if (!$result = $mysqli->query($sql)) {
-    // Oh no! The query failed. 
-  echo "Sorry, the website is experiencing problems.";
-
-  echo "Error: Our query failed to execute and here is why: \n";
-  echo "Query: " . $sql . "\n";
-  echo "Errno: " . $mysqli->errno . "\n";
-  echo "Error: " . $mysqli->error . "\n";
-  exit;
-}
-?>
-
-<!doctype html>
-<html>
-<body>
-<h1 align="center">Rack Details</h1>
-<table border="1" align="center" style="line-height:25px;">
-<tr>
-<th>Location ID</th>
-<th>Street</th>
-<th>Building</th>
-<th>Rack Capacity</th>
-<th>Rack Style</th>
-<th>Weather Coverage</th>
-
-</tr>
-
-<?php
-
-//Fetch Data form database
-
-if($result->num_rows > 0){
- while($row = $result->fetch_assoc()){
- <tr>
- <td>echo $row['LocID']; </td>
- <td>echo $row['Street']; </td>
- <td>echo $row['Building']; </td>
- <td>echo $row['Bike_Capacity']; </td>
- <td>echo $row['Rack_Style']; </td>
- <td>echo $row['Weather_Coverage']; </td>
- </tr>}
-else
-{ 
- <tr>
- <td>echo "There's No data found!!!";</td>
- </tr>
-}
-}
-?>
 
 <?php
  $result->free();
