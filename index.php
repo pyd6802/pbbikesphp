@@ -109,58 +109,33 @@ if (!$result = $mysqli->query($sql)) {
 </tr>
 
 <?php
+
 //Fetch Data form database
 
 if($result->num_rows > 0){
  while($row = $result->fetch_assoc()){
-
  <tr>
- <td><?php echo $row['LocID']; ?></td>
- <td><?php echo $row['Street']; ?></td>
- <td><?php echo $row['Building']; ?></td>
- <td><?php echo $row['Bike_Capacity']; ?></td>
- <td><?php echo $row['Rack_Style']; ?></td>
- <td><?php echo $row['Weather_Coverage']; ?></td>}
-
+ <td>echo $row['LocID']; </td>
+ <td>echo $row['Street']; </td>
+ <td>echo $row['Building']; </td>
+ <td>echo $row['Bike_Capacity']; </td>
+ <td>echo $row['Rack_Style']; </td>
+ <td>echo $row['Weather_Coverage']; </td>
+ </tr>}
 else
 { 
  <tr>
- <td>?php echo "There's No data found!!!" </td>
+ <td>echo "There's No data found!!!";</td>
  </tr>
-}}
+}
+}
+?>
 
+<?php
+ $result->free();
+ $mysqli->close();
+ ?>
+ 
+ 
 </body>
-
-
-</html>    
-
-/* Update Form */
-
-<html>
-
-    <head>
-
-        <title> PHP UPDATE DATA </title>
-
-        <meta charset="UTF-8">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    </head>
-
-    <body>
-
-        <form action="php_update_data_from_mysql_database_table.php" method="post">
-
-            Location ID To Update: <input type="text" name="id" required><br><br>
-
-            New Rack Capacity:<input type="number" name="capacity" required><br><br>
-
-            <input type="submit" name="update" value="Update Data">
-
-        </form>
-
-    </body>
-
-
-</html>    
+</html>   
