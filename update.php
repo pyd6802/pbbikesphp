@@ -20,7 +20,7 @@ if($link === false){
    // mysql query to Update data
    //"UPDATE persons SET email='peterparker_new@mail.com' WHERE id=1"
    
-   $query = "UPDATE Location SET Capacity='.$Capacity. 'WHERE LocID ='.$Location_id";
+   $query = "UPDATE Location SET Bike_Capacity=$Capacity WHERE LocID = $Location_id;";
    $result = mysqli_query($link, $query);
    
    if($result)
