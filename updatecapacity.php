@@ -1,4 +1,4 @@
-?php
+<?php
 
 // php code to Update data from mysql database Table
 
@@ -21,31 +21,29 @@ if($link === false){
    $query = "Select Bike_Capacity from Location WHERE LocID = $Location_id;";
    $result = mysqli_query($link, $query);
 	
-   if ($row = $result->fetch_row()) {
-   if ($row[0]) < $Capacity
-	   echo 'Estimate must be less than rack Capacity';
-   } else {
+   if ($row = $result->fetch_row()) 
+	   {	   
+       if ($row[0]) < $Capacity {
+	       echo 'Estimate must be less than rack Capacity'; } 
+	   else { mysqli_free_result($result);
+              $query = "UPDATE Location SET Estimated_Space=$Capacity WHERE LocID = $Location_id;";
+              $result = mysqli_query($link, $query);
+              if($result){
+		         echo 'Data Updated';}
+              else{
+                 echo 'Invalid Location ID';
+	             echo "Error: Our query failed to execute and here is why not: \n";
+	             echo "Query: " . $query . "\n";
+	             echo "Errno: " . $mysqli->errno . "\n";
+	             echo "Error: " . $mysqli->error . "\n";
+                  }
+             }
 
-	mysqli_free_result($result)
-   $query = "UPDATE Location SET Estimated_Space=$Capacity WHERE LocID = $Location_id;";
-   $result = mysqli_query($link, $query);
-   
-   if($result)
-   {
-       echo 'Data Updated';
-   }else{
-       echo 'Invalid Location ID';
-	   echo "Error: Our query failed to execute and here is why not: \n";
-	   echo "Query: " . $query . "\n";
-	   echo "Errno: " . $mysqli->errno . "\n";
-	   echo "Error: " . $mysqli->error . "\n";
-   }
-  }
+        }
+
  mysqli_free_result($result);
  mysqli_close($link);
-}
-   
- 
+	
 
 ?>
 
