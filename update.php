@@ -28,7 +28,7 @@ if($link === false){
        echo 'Data Updated';
    }else{
        echo 'Invalid Location ID';
-	   echo "Error: Our query failed to execute and here is why: \n";
+	   echo "Error: Our query failed to execute and here is why not: \n";
 	   echo "Query: " . $query . "\n";
 	   echo "Errno: " . $mysqli->errno . "\n";
 	   echo "Error: " . $mysqli->error . "\n";
