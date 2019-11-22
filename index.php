@@ -18,8 +18,7 @@
  
     <p>Created using PowerBI services</p>
  
- <h1>Show me the data VM</h1>
-
+<h1>Show me the data VM</h1>
 
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
@@ -34,7 +33,7 @@ if($link === false){
  
 // Attempt select query execution
 
-$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage FROM Location WHERE Bike_Capacity > 0 ORDER BY Bike_Capacity DESC";
+$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage, Estimated_Space, Time_Stamp FROM Location WHERE Bike_Capacity > 0 ORDER BY Bike_Capacity DESC";
  
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
@@ -46,15 +45,19 @@ if($result = mysqli_query($link, $sql)){
                 echo "<th>Bike Capacity</th>";
                 echo "<th>Rack Style</th>";
                 echo "<th>Weather Coverage</th>";
-            echo "</tr>";
+                echo "<th>Estimated Space</th>";
+                echo "<th>Last Updated</th>";
+                echo "</tr>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
                 echo "<td>" . $row['LocID'] . "</td>";
                 echo "<td>" . $row['Street'] . "</td>";
                 echo "<td>" . $row['Building'] . "</td>";
                 echo "<td>" . $row['Bike_Capacity'] . "</td>";
-		echo "<td>" . $row['Rack_Style'] . "</td>";
+                echo "<td>" . $row['Rack_Style'] . "</td>";
                 echo "<td>" . $row['Weather_Coverage'] . "</td>";
+                echo "<td>" . $row['Estimated_Space'] . "</td>";
+                echo "<td>" . $row['Time_Stamp'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
@@ -62,8 +65,8 @@ if($result = mysqli_query($link, $sql)){
         mysqli_free_result($result);
     } else{
         echo "No records matching your query were found.";
-    }
-} else{
+		    }
+    } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
 ?>
@@ -71,7 +74,7 @@ if($result = mysqli_query($link, $sql)){
 <?php
  $result->free();
  $mysqli->close();
- ?>
+?>
  
  
 </body>
