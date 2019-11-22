@@ -18,7 +18,7 @@
  
     <p>Created using PowerBI services</p>
  
- <h1>Show me the data!</h1>
+ <h1>Show me the data VM</h1>
 
 
 <?php 
