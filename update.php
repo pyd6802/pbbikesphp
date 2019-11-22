@@ -1,4 +1,4 @@
-?php
+<?php
 
 // php code to Update data from mysql database Table
 
@@ -16,68 +16,47 @@ if($link === false){
    
    $Location_id = $_POST['id'];
    $Capacity = $_POST['capacity'];
+           
+   // mysql query to Update data
+   //"UPDATE persons SET email='peterparker_new@mail.com' WHERE id=1"
    
- 
-   $query = "Select Bike_Capacity from Location WHERE LocID = $Location_id;";
+   $query = "UPDATE Location SET Bike_Capacity=$Capacity WHERE LocID = $Location_id;";
    $result = mysqli_query($link, $query);
-	
-   if ($row = $result->fetch_row()) 
-	   {	   
-       if ($row[0]) < $Capacity {
-	       echo 'Estimate must be less than rack Capacity'; } 
-	   else { mysqli_free_result($result);
-              $query = "UPDATE Location SET Estimated_Space=$Capacity WHERE LocID = $Location_id;";
-              $result = mysqli_query($link, $query);
-              if($result){
-		         echo 'Data Updated';}
-              else{
-                 echo 'Invalid Location ID';
-	             echo "Error: Our query failed to execute and here is why not: \n";
-	             echo "Query: " . $query . "\n";
-	             echo "Errno: " . $mysqli->errno . "\n";
-	             echo "Error: " . $mysqli->error . "\n";
-                  }
-             }
-
-        }
-
- mysqli_free_result($result);
- mysqli_close($link);
-}	
+   
+   if($result)
+   {
+       echo 'Data Updated';
+   }else{
+       echo 'Invalid Location ID';
+	   echo "Error: Our query failed to execute and here is why: \n";
+	   echo "Query: " . $query . "\n";
+	   echo "Errno: " . $mysqli->errno . "\n";
+	   echo "Error: " . $mysqli->error . "\n";
+   }
+   mysqli_close($link);
+}
 
 ?>
 
-	       <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
+
     <head>
-        <title> Capacity Crowd Sourcing </title>
-	<h1> Pittsburgh Bikes Crowd Sourcing </h1>
-        <hr>
-        <h2> Use this form to provide your capacity estimate </h2>  
-        <hr>
+        <title> PHP UPDATE DATA </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
-
-    <iframe width="620" height="340" 
-     src="https://datastudio.google.com/embed/reporting/85de1e89-2f67-489a-98f1-7db3fc3c5d5a/page/BoX4" 
-     frameborder="0" style="border:0" allowfullscreen></iframe>
-
         <form action="update.php" method="post">
-            Location ID To Update: <input type="number" name="ID" required><br><br>
-            Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
+            Location ID To Update: <input type="number" name="Location_id" required><br><br>
+            New Capacity:<input type="number" name="Capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
+
         </form>
+    </body>
 
-	<p id="status-message">Estimated Capacity data could not be updated 
-        
-        <script>
-           setTimeout(function(){
-            document.getElementById('status-message').style.display = 'none'; }, 10000);
-         </script>
 
-    </<body>
 </html>
+
