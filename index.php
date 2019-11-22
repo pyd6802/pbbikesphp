@@ -20,12 +20,11 @@
  
  <h1>Show me the data!</h1>
 
-
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 
-$link = mysqli_connect('34.68.111.23', 'root', 'pbbikesmysql', 'pbbikes');
+$link = mysqli_connect('pbbikesaws.cl1i7i33btse.us-east-1.rds.amazonaws.com', 'admin', 'pbbikesaws', 'pbbikes');
 // Check connection
 
 if($link === false){
