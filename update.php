@@ -5,7 +5,7 @@
 if(isset($_POST['update']))
 
 {
- $link = mysqli_connect('34.68.111.23', 'root', 'pbbikesmysql', 'pbbikes');
+ $link = mysqli_connect('pbbikesaws.cl1i7i33btse.us-east-1.rds.amazonaws.com', 'admin', 'pbbikesaws', 'pbbikes');
 // Check connection
 
 if($link === false){
