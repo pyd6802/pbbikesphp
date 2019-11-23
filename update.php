@@ -55,8 +55,8 @@ if($link === false){
      src="https://datastudio.google.com/embed/reporting/85de1e89-2f67-489a-98f1-7db3fc3c5d5a/page/BoX4" 
      frameborder="0" style="border:0" allowfullscreen></iframe>
         <form action="update.php" method="post">
-            Location ID To Update: <input type="number" name="ID" required><br><br>
-            Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
+            Location ID To Update: <input type="number" name="id" required><br><br>
+            Estimated Capacity:    <input type="number" name="capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
         </form>
 	<p id="status-message">Estimated Capacity data could not be updated 
