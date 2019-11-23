@@ -13,9 +13,8 @@
     
     <p>Click on the tree map location to see where the rack is located.</p>
     <iframe width="1140" height="541.25" 
-     src="https://app.powerbi.com/reportEmbed?reportId=65f4b52f-97a8-47ee-b183-44d5c0b37b56&autoAuth=true&ctid=4c25b8a6-17f7-46f9-83f0-54734ab81fb1&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLW5vcnRoLWNlbnRyYWwtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" 
+     src="https://app.powerbi.com/reportEmbed?reportId=759f2baf-632c-40c9-9629-63ef4177b7fc&autoAuth=true&ctid=4c25b8a6-17f7-46f9-83f0-54734ab81fb1&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLW5vcnRoLWNlbnRyYWwtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" 
             frameborder="0" allowFullScreen="true"></iframe>
- 
     <p>Created using PowerBI services</p>
  
  <h1>Show me the data!</h1>
