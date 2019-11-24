@@ -69,15 +69,14 @@ if($link === false){
 	
 		    <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	    
-    <div align="center" style="border:2px solid orange; margin 4; width:600px;">    
+    <div align="center" style="border:2px solid orange; width:600px;">    
 
      	<form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
             Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
         </form>
-	    <p> <br /></p>
-  
+	  
         <p align="center" id="status-message">Estimated Capacity data <?php echo $Message ?> 
         
         <script>
