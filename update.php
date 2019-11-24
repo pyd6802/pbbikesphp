@@ -71,7 +71,7 @@ if($link === false){
 	    
     <div align="center">    
 
-    <div align="center" style="border:2px solid orange; width:280px;">    
+    <div align="center" style="border:2px solid orange; width:290px;">    
         <p> <br /></p>
      	<form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
