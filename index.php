@@ -3,7 +3,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>Help, I need to park my bike in Pittsburgh!</title>
+    <title style="text-align: center;">Help, I need to park my bike in Pittsburgh!</title>
   </head>
 
   <body>
@@ -15,12 +15,10 @@
     
     <p style="text-align: center;">Click on the tree map location to see where the rack is located.</p>
     
-	<p style="text-align: center;"  
 
 	  <iframe width="800" height="600" 
 	  src="https://app.powerbi.com/view?r=eyJrIjoiYzlmNDVjZDYtMmQzOS00NTQ0LWJhM2QtZWQxMzI5OGUwZWE0IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
 	  frameborder="0" allowFullScreen="true"></iframe>
-	</p>
 
      <p>Created using PowerBI services</p>
  
