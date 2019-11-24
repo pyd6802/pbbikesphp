@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
- <font face="verdana" color="orange">
-	 <body style="background-color:black;">
+ <font face="verdana" color="orange"> 
+
+  
   <head>
     <meta charset="UTF-8">
     <title style="text-align: center;">Help, I need to park my bike in Pittsburgh!</title>
   </head>
 
-  </body>
  <body style="background-color:black;">
-	  <h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
+	 
+<h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
 	  
     <p style="text-align: center;">
     Need to park your bike? Use the interactive map showing location of bike racks in downtown Pittsburgh</p>
@@ -21,9 +22,9 @@
 	  src="https://app.powerbi.com/view?r=eyJrIjoiYzlmNDVjZDYtMmQzOS00NTQ0LWJhM2QtZWQxMzI5OGUwZWE0IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
 	  frameborder="0" allowFullScreen="true"></iframe>
 	  </div>
-     <p>Created using PowerBI services</p>
- 
- <h1>VM1 Show me the data!</h1>
+    
+    
+ <h1 style="text-align: center;"> VM1 Show me the data! </h1>
 
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
@@ -57,7 +58,7 @@ if($result = mysqli_query($link, $sql)){
 		echo "</tr>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
-                echo "<td>" . $row['LocID'] . "</td>";
+                echo "<td style="text-align: center;">" . $row['LocID'] . "</td>";
                 echo "<td>" . $row['Street'] . "</td>";
                 echo "<td>" . $row['Building'] . "</td>";
                 echo "<td>" . $row['Bike_Capacity'] . "</td>";
