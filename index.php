@@ -27,14 +27,14 @@
     <h3 style="text-align: center;"> Show Me the Data! </h3>
     
     <font face="verdana" color="orange" font size="1">	   
-    <p style="text-align: center;" My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
+    <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	  
     
 <div align ="center">
    <button onclick="window.location.href='http://mypittsburghbikes.com/update.php';">   Help Your Fellow Cyclists - Click Here To Update Estimated Rack Capacity   </button>
 </div>	    
 
-<p> /br </p> 
+	    <p>  </br> </p> 
 
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
