@@ -29,7 +29,7 @@
     <font face="verdana" color="orange" font size="1">	
 
 <div align ="center">
-   <button onclick="window.location.href = 'http://www.mypittsburghbikes.com/update.php';">   Help Your Fellow Cyclists - Click Here To Update Estimated Rack Capacity   </button>
+   <button onclick="window.location.href='http://mypittsburghbikes.com/update.php';">   Help Your Fellow Cyclists - Click Here To Update Estimated Rack Capacity   </button>
 </div>	    
 
 <p>   </p> 
