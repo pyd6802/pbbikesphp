@@ -36,6 +36,8 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
  
+<font face="verdana" color="orange" font size="3">	 
+
 // Attempt select query execution
 
 $sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage, Estimated_Space, Time_Stamp FROM Location WHERE Bike_Capacity > 0 ORDER BY Bike_Capacity DESC";
