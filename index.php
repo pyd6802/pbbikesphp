@@ -9,7 +9,10 @@
   </head>
 
   <body style="background-color:black;">
-  
+
+    IP address is: <? echo $_SERVER["REMOTE_ADDR"]; ?>
+
+ 
     <h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
 	  
     <p style="text-align: center;">
