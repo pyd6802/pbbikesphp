@@ -29,9 +29,11 @@
     <font face="verdana" color="orange" font size="1">	
 
 <div align ="center">
-   <button onclick="window.location.href = 'https://www.mypittsburghbikes.com/update.php';">Click Here to Update</button>
+   <button onclick="window.location.href = 'http://www.mypittsburghbikes.com/update.php';">Click Here to Update</button>
 </div>	    
-	    
+
+<p>   </p>
+
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
