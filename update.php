@@ -69,7 +69,9 @@ if($link === false){
 	
 		    <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	    
-    <div align="center" style="border:2px solid orange; width:400px;">    
+    <div align="center">    
+
+    <div align="center" style="border:2px solid orange; width:300px;">    
 
      	<form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
@@ -84,7 +86,7 @@ if($link === false){
             document.getElementById('status-message').style.display = 'none'; }, 10000);
 	     </script> 
         </p>
-     </div>
+	    </div> </div>
      
      <div align ="center">
 	<p> <br /></p>
