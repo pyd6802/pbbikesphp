@@ -41,17 +41,16 @@ if($link === false){
 
 // Attempt select query execution
 
-$sql = "SELECT LocID, Street, Building, Bike_Capacity, Rack_Style, Weather_Coverage, Estimated_Space, Time_Stamp FROM Location WHERE Bike_Capacity > 0 ORDER BY Bike_Capacity DESC";
+$sql = "SELECT LocID, Street, Building, Bike_Capacity, Weather_Coverage, Estimated_Space, Time_Stamp FROM Location WHERE Bike_Capacity > 0 ORDER BY Bike_Capacity DESC";
  
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
-        echo "<table>";
+        echo "<table align='center'>";
             echo "<tr>";
                 echo "<th>Location ID</th>";
                 echo "<th>Street</th>";
                 echo "<th>Building</th>";
                 echo "<th>Bike Capacity</th>";
-                echo "<th>Rack Style</th>";
                 echo "<th>Weather Coverage</th>";
             	echo "<th>Estimated Space</th>";
 		echo "<th>Last Updated</th>";
@@ -62,8 +61,7 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['Street'] . "</td>";
                 echo "<td>" . $row['Building'] . "</td>";
                 echo "<td style='text-align: center;'>" . $row['Bike_Capacity'] . "</td>";
-		echo "<td>" . $row['Rack_Style'] . "</td>";
-                echo "<td>" . $row['Weather_Coverage'] . "</td>";
+		echo "<td>" . $row['Weather_Coverage'] . "</td>";
 		echo "<td style='text-align: center;'>" . $row['Estimated_Space'] . "</td>";
                 echo "<td style='text-align: center;'>" . $row['Time_Stamp'] . "</td>";
             echo "</tr>";
