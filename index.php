@@ -12,12 +12,14 @@
     <p>Need to park your bike? Use the interactive map showing location of bike racks in downtown Pittsburgh</p>
     
     <p>Click on the tree map location to see where the rack is located.</p>
-    <iframe width="1140" height="541.25" 
-     src="https://app.powerbi.com/reportEmbed?reportId=759f2baf-632c-40c9-9629-63ef4177b7fc&autoAuth=true&ctid=4c25b8a6-17f7-46f9-83f0-54734ab81fb1&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLW5vcnRoLWNlbnRyYWwtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" 
-            frameborder="0" allowFullScreen="true"></iframe>
-    <p>Created using PowerBI services</p>
+    
+	  <iframe width="800" height="600" 
+	  src="https://app.powerbi.com/view?r=eyJrIjoiYzlmNDVjZDYtMmQzOS00NTQ0LWJhM2QtZWQxMzI5OGUwZWE0IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
+	  frameborder="0" allowFullScreen="true"></iframe>
+	  
+     <p>Created using PowerBI services</p>
  
- <h1>Show me the data!</h1>
+ <h1>VM1 Show me the data!</h1>
 
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
