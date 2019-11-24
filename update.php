@@ -71,14 +71,14 @@ if($link === false){
 	    
     <div align="center">    
 
-    <div align="center" style="border:2px solid orange; width:300px;">    
-
+    <div align="center" style="border:2px solid orange; width:280px;">    
+        <p> <br /></p>
      	<form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
             Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
         </form>
-	  
+	<p> <br /></p>  
         <p align="center" id="status-message">Estimated Capacity data <?php echo $Message ?> 
         
         <script>
