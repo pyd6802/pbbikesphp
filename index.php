@@ -24,7 +24,9 @@
 	  </div>
     
     
-    <h1 style="text-align: center;"> Show Me the Data! IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </h1>
+    <h3 style="text-align: center;"> Show Me the Data! </h3>
+	   
+    <p> style="text-align: center;" My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	  
     <font face="verdana" color="orange" font size="1">	
 
