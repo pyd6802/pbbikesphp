@@ -25,17 +25,16 @@
     
     
     <h3 style="text-align: center;"> Show Me the Data! </h3>
-	   
-    <p> style="text-align: center;" My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
+    
+    <font face="verdana" color="orange" font size="1">	   
+    <p style="text-align: center;" My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	  
-    <font face="verdana" color="orange" font size="1">	
-
+    
 <div align ="center">
    <button onclick="window.location.href='http://mypittsburghbikes.com/update.php';">   Help Your Fellow Cyclists - Click Here To Update Estimated Rack Capacity   </button>
 </div>	    
 
-<p>   </p> 
-<p>   </p>
+<p> /br </p> 
 
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
