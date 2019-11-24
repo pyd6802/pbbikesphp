@@ -49,7 +49,7 @@ if($link === false){
 
   <body style="background-color:black;">
  
-    <p style="text-align: center;" font size="2"> <b> Pittsburgh Bikes Capacity Crowd Sourcing</b> </p>
+    <p style="text-align: center;" font size="3"> <b> Pittsburgh Bikes Capacity Crowd Sourcing</b> </p>
 	  
     <p style="text-align: center;" font size ="2">
 	    
@@ -70,24 +70,25 @@ if($link === false){
 	     <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	    <p> &nbsp </p>
 	    
-    <div align="center" style="border:2px solid orange;" width="800">    
-	    <p> <br /><br /> </p>
-        <form action="update.php" method="post">
+    <div align="center" style="border:2px solid orange;" width="600;">    
+	    <p> <br /> </p>
+ 
+	<form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
             Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
         </form>
-	    <p> <br /><br /></p>
-     </div>
-
-     <p align="center" id="status-message">Estimated Capacity data <?php echo $Message ?> 
+	    <p> <br /></p>
+  
+        <p align="center" id="status-message">Estimated Capacity data <?php echo $Message ?> 
         
         <script>
            setTimeout(function(){
             document.getElementById('status-message').style.display = 'none'; }, 10000);
 	     </script> 
-      </p>
-
+        </p>
+     </div>
+     
      <div align ="center">
         <button onclick="window.location.href='http://mypittsburghbikes.com/index.php';
 	">   Click Here To See Location Details and Steet View of Racks  </button>
