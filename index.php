@@ -58,7 +58,7 @@ if($result = mysqli_query($link, $sql)){
 		echo "</tr>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
-                echo "<td style="text-align: center;">" . $row['LocID'] . "</td>";
+                echo "<td style='text-align: center;'>" . $row['LocID'] . "</td>";
                 echo "<td>" . $row['Street'] . "</td>";
                 echo "<td>" . $row['Building'] . "</td>";
                 echo "<td>" . $row['Bike_Capacity'] . "</td>";
