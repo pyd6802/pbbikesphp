@@ -49,7 +49,9 @@ if($link === false){
 
   <body style="background-color:black;">
  
-    <p style="text-align: center;" font size="3"> <b> Pittsburgh Bikes Capacity Crowd Sourcing</b> </p>
+    <h1 style="text-align: center;"> Pittsburgh Bikes </h1>
+	  
+    <p style="text-align: center;" font size="3"> <b>Capacity Crowd Sourcing</b> </p>
 	  
     <p style="text-align: center;" font size ="2">
 	    
