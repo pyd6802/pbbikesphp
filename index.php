@@ -7,7 +7,7 @@
     <title style="text-align: center;">Help, I need to park my bike in Pittsburgh!</title>
   </head>
 
-  <body>
+  </body>
  <body style="background-color:black;">
 	  <h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
 	  
