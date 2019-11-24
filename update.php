@@ -67,6 +67,8 @@ if($link === false){
     </div>
 	    
 	    <p>  </p>
+	     <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
+	    <p>  </p>
 	    
     <div align="center">    
         <form action="update.php" method="post">
