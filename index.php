@@ -24,7 +24,8 @@
 	  </div>
     
     
-    <h1 style="text-align: center;"> VM1 Show Me the Data! </h1>
+    <h1 style="text-align: center;"> Show Me the Data! IP: <? echo $_SERVER["REMOTE_ADDR"]; ?> </h1>
+	  
     <font face="verdana" color="orange" font size="1">	
 	
 <?php 
