@@ -8,9 +8,9 @@
     <title style="text-align: center;">Help, I need to park my bike in Pittsburgh!</title>
   </head>
 
-
-	 
-<h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
+  <body style="background-color:black;">
+  
+    <h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
 	  
     <p style="text-align: center;">
     Need to park your bike? Use the interactive map showing location of bike racks in downtown Pittsburgh</p>
@@ -24,8 +24,8 @@
 	  </div>
     
     
- <h1 style="text-align: center;"> VM1 Show me the data! </h1>
- <font face="verdana" color="orange" font size="3">	
+    <h1 style="text-align: center;"> VM1 Show me the data! </h1>
+    <font face="verdana" color="orange" font size="1">	
 	
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
@@ -61,11 +61,11 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td style='text-align: center;'>" . $row['LocID'] . "</td>";
                 echo "<td>" . $row['Street'] . "</td>";
                 echo "<td>" . $row['Building'] . "</td>";
-                echo "<td>" . $row['Bike_Capacity'] . "</td>";
+                echo "<td style='text-align: center;'>" . $row['Bike_Capacity'] . "</td>";
 		echo "<td>" . $row['Rack_Style'] . "</td>";
                 echo "<td>" . $row['Weather_Coverage'] . "</td>";
-		echo "<td>" . $row['Estimated_Space'] . "</td>";
-                echo "<td>" . $row['Time_Stamp'] . "</td>";
+		echo "<td style='text-align: center;'>" . $row['Estimated_Space'] . "</td>";
+                echo "<td style='text-align: center;'>" . $row['Time_Stamp'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
