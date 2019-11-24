@@ -49,23 +49,23 @@ if($link === false){
 
   <body style="background-color:black;">
  
-    <h1 style="text-align: center;"> <b> Pittsburgh Bikes Capacity Crowd Sourcing</b> </h1>
+    <p style="text-align: center;" font size="2"> <b> Pittsburgh Bikes Capacity Crowd Sourcing</b> </p>
 	  
-    <h2 style="text-align: center;">
-    Update the Estimated Capacity and Help Your Fellow Cyclist Find Parking<g=/h2>
+    <p style="text-align: center;" font size ="2">
+	    
+    Update the Estimated Capacity and Help Your Fellow Cyclist Find Parking </p>
     
-    <h3 style="text-align: center;">Enter the Bike Location ID and Update the Estimated Capacity</h3>
+    <p style="text-align: center;" font size ="1">Enter the Bike Location ID and Update the Estimated Capacity</p>
     
  
-    <body>
     <div align="center">
     
-       <iframe width="620" height="340" 
+       <iframe width="800" height="400" 
        src="https://datastudio.google.com/embed/reporting/85de1e89-2f67-489a-98f1-7db3fc3c5d5a/page/BoX4" 
        frameborder="0" style="border:0" allowfullscreen></iframe>
  
     </div>
-	    
+	    <font face="verdana" color="orange" font size="1">
 	    <p>  </p>
 	     <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	    <p>  </p>
