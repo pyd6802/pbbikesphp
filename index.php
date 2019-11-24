@@ -8,18 +8,18 @@
 
   <body>
  
-    <h1>Pittsburgh Bikes</h1>
+	  <h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
 	  
     <p style="text-align: center;">
     Need to park your bike? Use the interactive map showing location of bike racks in downtown Pittsburgh</p>
     
-    <p style="text-align: center;">Click on the tree map location to see where the rack is located.</p>
+    <p style="text-align: center;">Click on the tree map location to see where the rack is located</p>
     
-
+    <div align="center">
 	  <iframe width="800" height="600" 
 	  src="https://app.powerbi.com/view?r=eyJrIjoiYzlmNDVjZDYtMmQzOS00NTQ0LWJhM2QtZWQxMzI5OGUwZWE0IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
 	  frameborder="0" allowFullScreen="true"></iframe>
-
+	  </div>
      <p>Created using PowerBI services</p>
  
  <h1>VM1 Show me the data!</h1>
