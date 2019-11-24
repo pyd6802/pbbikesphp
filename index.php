@@ -24,7 +24,7 @@
 	  </div>
     
     
-    <h1 style="text-align: center;"> VM1 Show me the data! </h1>
+    <h1 style="text-align: center;"> VM1 Show Me the Data! </h1>
     <font face="verdana" color="orange" font size="1">	
 	
 <?php 
