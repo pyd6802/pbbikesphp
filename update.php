@@ -53,7 +53,7 @@ if($link === false){
 	  
     <p style="text-align: center;" font size ="2">
 	    
-    Update the Estimated Capacity and Help Your Fellow Cyclist Find Parking </p>
+	    <b> Update the Estimated Capacity and Help Your Fellow Cyclists Find Parking </b> </p>
     
     <p style="text-align: center;" font size ="1">Enter the Bike Location ID and Update the Estimated Capacity</p>
     
@@ -70,7 +70,7 @@ if($link === false){
 	     <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	    <p>  </p>
 	    
-    <div align="center">    
+    <div align="center" style="border:2px solid orange;">    
         <form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
             Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
