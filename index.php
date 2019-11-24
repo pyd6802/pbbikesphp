@@ -25,7 +25,8 @@
     
     
  <h1 style="text-align: center;"> VM1 Show me the data! </h1>
-
+ <font face="verdana" color="orange" font size="3">	
+	
 <?php 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
@@ -37,7 +38,6 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
  
-<font face="verdana" color="orange" font size="3">	 
 
 // Attempt select query execution
 
