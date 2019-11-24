@@ -18,7 +18,7 @@
     <p style="text-align: center;">Click on the tree map location to see where the rack is located</p>
     
     <div align="center">
-	  <iframe width="800" height="500" 
+	  <iframe width="800" height="480" 
 	  src="https://app.powerbi.com/view?r=eyJrIjoiYzlmNDVjZDYtMmQzOS00NTQ0LWJhM2QtZWQxMzI5OGUwZWE0IiwidCI6IjRjMjViOGE2LTE3ZjctNDZmOS04M2YwLTU0NzM0YWI4MWZiMSIsImMiOjN9" 
 	  frameborder="0" allowFullScreen="true"></iframe>
 	  </div>
