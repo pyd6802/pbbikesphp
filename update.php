@@ -66,14 +66,12 @@ if($link === false){
  
     </div>
 	    <font face="verdana" color="orange" font size="1">
-	    <p>  &nbsp </p>
-	     <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
-	    <p> &nbsp </p>
+	
+		    <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
 	    
-    <div align="center" style="border:2px solid orange;" width="600;">    
-	    <p> <br /> </p>
- 
-	<form action="update.php" method="post">
+    <div align="center" style="border:2px solid orange; margin 4; width:600px;">    
+
+     	<form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
             Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
@@ -90,6 +88,7 @@ if($link === false){
      </div>
      
      <div align ="center">
+	<p> <br /></p>
         <button onclick="window.location.href='http://mypittsburghbikes.com/index.php';
 	">   Click Here To See Location Details and Steet View of Racks  </button>
      </div>
