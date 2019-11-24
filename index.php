@@ -47,13 +47,13 @@ if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         echo "<table align='center'>";
             echo "<tr>";
-                echo "<th>Location ID</th>";
+                echo "<th>Location #</th>";
                 echo "<th>Street</th>";
                 echo "<th>Building</th>";
-                echo "<th>Bike Capacity</th>";
-                echo "<th>Weather Coverage</th>";
+                echo "<th>Capacity</th>";
+                echo "<th>Cover</th>";
             	echo "<th>Estimated Space</th>";
-		echo "<th>Last Updated</th>";
+		echo "<th>Updated</th>";
 		echo "</tr>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
