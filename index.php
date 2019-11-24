@@ -9,9 +9,6 @@
   </head>
 
   <body style="background-color:black;">
-
-    IP address is: <? echo $_SERVER["REMOTE_ADDR"]; ?>
-
  
     <h1 style="text-align: center;"> <b> Pittsburgh Bikes </b> </h1>
 	  
@@ -27,7 +24,7 @@
 	  </div>
     
     
-    <h1 style="text-align: center;"> Show Me the Data! IP: <? echo $_SERVER["REMOTE_ADDR"]; ?> </h1>
+    <h1 style="text-align: center;"> Show Me the Data! IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </h1>
 	  
     <font face="verdana" color="orange" font size="1">	
 	
