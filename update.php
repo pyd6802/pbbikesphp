@@ -66,26 +66,27 @@ if($link === false){
  
     </div>
 	    <font face="verdana" color="orange" font size="1">
-	    <p>  </p>
+	    <p>  &nbsp </p>
 	     <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
-	    <p>  </p>
+	    <p> &nbsp </p>
 	    
     <div align="center" style="border:2px solid orange;" width="800">    
-	    <p> </p>
+	    <p> <br /><br /> </p>
         <form action="update.php" method="post">
             Location ID To Update: <input type="number" name="ID" required><br><br>
             Estimated Capacity:    <input type="number" name="Capacity" required><br><br>
             <input type="submit" name="update" value="Update Data">
         </form>
-	    <p> </p>
+	    <p> <br /><br /></p>
      </div>
 
-     <p id="status-message">Estimated Capacity data <?php echo $Message ?> 
+     <p align="center" id="status-message">Estimated Capacity data <?php echo $Message ?> 
         
         <script>
            setTimeout(function(){
             document.getElementById('status-message').style.display = 'none'; }, 10000);
-         </script>
+	     </script> 
+      </p>
 
      <div align ="center">
         <button onclick="window.location.href='http://mypittsburghbikes.com/index.php';
