@@ -27,7 +27,7 @@
     <h3 style="text-align: center;"> Show Me the Data! </h3>
     
     <font face="verdana" color="orange" font size="1">	   
-    <p style="text-align: center;"> My IP: <?php echo $_SERVER["SERVER_ADDR"]; ?> </p>
+    <p style="text-align: center;"> Server IP: <?php echo $_SERVER["SERVER_ADDR"]; ?> </p>
 	  
     
 <div align ="center">
