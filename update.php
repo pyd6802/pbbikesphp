@@ -69,7 +69,7 @@ if($link === false){
     </div>
 	    <font face="verdana" color="orange" font size="1">
 	
-		    <p style="text-align: center;"> My IP: <?php echo $_SERVER["REMOTE_ADDR"]; ?> </p>
+		    <p style="text-align: center;"> My IP: <?php echo $_SERVER["SERVER_ADDR"]; ?> </p>
 	    
     <div align="center">    
 
